@@ -17,18 +17,18 @@ Test Data:
 * `en_ewt-up-test.conllu`
 
 ### Code 
-The folder code consists the following script:
+The folder [**code**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/Code) consists the following script:
 * `main.py` This file carries out the entire experiment (feature extraction,
 training, testing)
 
 ### Results 
-The folder results consists of the output files of the following components:
+The folder [**results**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/Results) consists of the output files of the following components:
 * `Output of identification for predicates and arguments`
 * `Feature Extraction`
 * `Basic Evaluation`
 
 ### Prerequisites
-Any requirements needed to run the provided code can be found in requirment.txt
+Any requirements needed to run the provided code can be found in [**requirments.txt**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/requirments.txt)
 
 ### Part 1: Traditional SRL
 
