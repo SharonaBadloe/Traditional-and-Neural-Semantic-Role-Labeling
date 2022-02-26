@@ -1,4 +1,4 @@
-# NLP Assignment 2: Traditional and Neural Semantic Role Labeling
+# Advanced NLP Assignment 2: Traditional and Neural Semantic Role Labeling
 
 We are Giorgio Malinverni, Sharona Badloe, Sybren Molhuizen and Konstantina Andronikou.
 
