@@ -44,7 +44,7 @@ The first step for the extraction was to analyse the given dataset and investiga
 ### 3.Description of classification task for argument classification 
 ### 4.Features 
 
-The following table gives an overview of all the features selected in order to carry out the semantic role labeling task.
+The following table gives an overview of all the features selected in order to carry out the semantic role labeling task. The procedure of implementing the features as well as the motivation behind the selction will be described in greater detail in the following sections. 
 
 | Baseline Features       | Dataset Features          | Advanced Features  |
 | :-------------: |:-------------:| :-----:|
@@ -55,7 +55,6 @@ The following table gives an overview of all the features selected in order to c
 | Binary Representation|   |  |
  
 
- The following sections will present motivation of the features chosen in greater detail, as well as describe the procedure followed to implement them. 
 ### 4.1 Baseline Features 
 The aim of this report is to implement basic features evaluating local information in the context of the term or element under consideration, and report characteristics of a candidate argument's internal structure. Moreover these features should provide characteristics of the target verb predicate's characteristics and of the verb predicate's relations with the component under examination.The features chosen for the baseline system are: token, lemma, POS tags, n-grams and binary representation.
 
