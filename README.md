@@ -43,7 +43,19 @@ The first step for the extraction was to analyse the given dataset and investiga
 
 ### 3.Description of classification task for argument classification 
 ### 4.Features 
- The following sections will present the features chosen as well as describe the procedure followed to implement them. 
+
+The following table gives an overview of all the features selected in order to carry out the semantic role labeling task.
+
+| Baseline Features       | Dataset Features          | Advanced Features  |
+| :-------------: |:-------------:| :-----:|
+| Token      | Morphological Features |Voice of the Verb |
+| Lemma      | Dependency Relation      | Parent-Child Relation|
+| POS | Distance to the Head     |     |
+| N-grams |    |  |
+| Binary Representation|   |  |
+ 
+
+ The following sections will present motivation of the features chosen in greater detail, as well as describe the procedure followed to implement them. 
 ### 4.1 Baseline Features 
 The aim of this report is to implement basic features evaluating local information in the context of the term or element under consideration, and report characteristics of a candidate argument's internal structure. Moreover these features should provide characteristics of the target verb predicate's characteristics and of the verb predicate's relations with the component under examination.The features chosen for the baseline system are: token, lemma, POS tags, n-grams and binary representation.
 
@@ -52,7 +64,7 @@ The most common and most simple features are lemma and token. A token is “the 
  Finally, for the baseline representation a new column was created in order to store a binary representation of the predicate. If the sentence includes a predicate then the value “1”  would be assigned while if there is no predicate “0” will be the value stored. 
 
 ### 4.2 Features already adapted in the dataset  
-A great amount of features were already implemented in the dataset provided for this specific task. The data contained some morholodival features. The morphological structure of a word is a crucial component for high-level semantic analysis tasks. Due to the fact morphology is the study of the structure and derivation of complex signals, it can concentrate on the semantic aspect. For example, the construction of complex concepts and structural (composition of complex names for concepts) aspects, as well as the relationship between them (Levin, 2017). Other features implemented were dependency relation and the distance to the head of the predicate. Dependency relation 
+A great amount of features were already implemented in the dataset provided for this specific task. The data contained some morholodival features. The morphological structure of a word is a crucial component for high-level semantic analysis tasks. Due to the fact morphology is the study of the structure and derivation of complex signals, it can concentrate on the semantic aspect. For example, the construction of complex concepts and structural (composition of complex names for concepts) aspects, as well as the relationship between them (Levin, 2017). Other features implemented were dependency relation and the distance to the head of the predicate. Dependency relation..... 
 
 ### 4.3 Advanced Features 
  In combination with the baseline features an advance selection was additionally made. Based on previous research conducted it can be seen that the most common advanced features used were: voice of verb, the parent and child of the token as well as the start and end of the token constituent.  Regarding the target verb, the voice feature of the verb is generally used as it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action. The direct objects of active verbs frequently correspond in semantic role to subjects of passive verbs, the distinction between active and passive verbs is crucial in the relationship between semantic role and grammatical function (Gildea, 2002). Additionally to the dependency relation, the parent and child of the predicate was implemented as an advanced feature. Each sentence consists of multiple tokens, and those tokens are syntactically or grammatically dependent on each other. For example, in the case of “I love you” there is a nominal subject “I”, a direct object “you” and a verbal phrase “love”. The verb love can be said to be a parent of “I” and “you”, and since it doesn't have a parent, we describe it as the root of the sentence. Another example is a sentence like “My dad gave me an apple”, in this sentence the root “gave” has children which are parents of their own children (CITATION - fiinl, 2019). 
