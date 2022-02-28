@@ -42,6 +42,10 @@ The main aim of this report is to present the creation of a machine learning sys
 The first step for the extraction was to analyse the given dataset and investigate which elements could potentially be useful for the conducted task. The dataset contained multiple columns, after discussion it was decided that the relevant column for the predicate extraction is XPOS. This column contained POS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As a first step of the extraction all tags that started with a “V” were generated from the column and checked to see if they were predicates. From the extraction it was evident that the only abbreviation label that was always marked as a predicate was “VBP”. The researchers decided to extract all predicates under that label and create a sample data with 700 predicates for the following steps.
 
 ### 3.Description of classification task for argument classification 
+
+Semantic role labeling can be divided into two subtasks: semantic argument identification and semantic argument classification. In a argument classififcation task each syntactic element in a sentence is classified as a semantic argument or a non-argument using semantic argument identification. In this case a syntactic element might be a single word in a sentence, or a group of words. Semantic argument classification entails categorizing each semantic argument into one of several semantic roles, such as ARG0, ARG1, and so on. A great amount of features that are able to capture the syntactic enviroment of the semantic argument will be proposed in the following section. 
+
+
 ### 4.Features 
 
 The following table gives an overview of all the features selected in order to carry out the semantic role labeling task. The procedure of implementing the features as well as the motivation behind the selction will be described in greater detail in the following sections. 
@@ -71,6 +75,13 @@ A great amount of features were already implemented in the dataset provided for 
 The following section will present the machine learning algorithm chosen to implement the chosen features.
 
 ### 5.Machine learning algorithm and motivation behind it 
+Possible ML algorithms that can be used: 
+  - Log-Linear (vector based linear classification)
+  - SVM 
+  - Standard polynominal kernels - Gaussian kernel 
+  - CRF
+  - passive-agressive algorithm 
+  - 
 ### 6.Summary table for all the results generated 
 ### 7. Conclusion
 ### References 
