@@ -48,15 +48,15 @@ Semantic role labeling can be divided into two subtasks: semantic argument ident
 
 ### 4.Features 
 
-The following table gives an overview of all the features selected in order to carry out the semantic role labeling task. The procedure of implementing the features as well as the motivation behind the selction will be described in greater detail in the following sections. 
+The following table gives an overview of all the features selected in order to carry out the classification tasks. The procedure of implementing the features as well as the motivation behind the selection will be described in greater detail in the following sections. 
 
 | Baseline Features       | Dataset Features          | Advanced Features  |
 | :-------------: |:-------------:| :-----:|
-| Token      | Morphological Features |Voice of the Verb |
-| Lemma      | Dependency Relation      | Parent-Child Relation|
-| POS | Distance to the Head     |     |
-| N-grams |    |  |
-| Binary Representation|   |  |
+| Token      | Morphological Features |Head |
+| Lemma      | Dependency Relation      | Voice|
+| POS | Token     |  Position   |
+| N-grams |  Lemma  | Form-POS on leftmost/rightmost dependent |
+| Binary Representation| |Form-POS left sibling of the argument |
  
 
 ### 4.1 Baseline Features 
@@ -64,17 +64,18 @@ The aim of this report is to implement basic features evaluating local informati
 
 The most common and most simple features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used in order to connect a token in text data to its grammatical definition.  To improve the performance of these features, since some predicates  may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (citation). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
 
- Finally, for the baseline representation a new column was created in order to store a binary representation of the predicate. If the sentence includes a predicate then the value “1”  would be assigned while if there is no predicate “0” will be the value stored. 
+Finally, for the baseline representation a new column was created in order to store a binary representation of the predicate as well as for the arguments. If the sentence includes a predicate or an argument then the value “1”  would be assigned while if the element is absent a “0” will be the value stored. 
 
 ### 4.2 Features already adapted in the dataset  
-A great amount of features were already implemented in the dataset provided for this specific task. The data contained some morholodival features. The morphological structure of a word is a crucial component for high-level semantic analysis tasks. Due to the fact morphology is the study of the structure and derivation of complex signals, it can concentrate on the semantic aspect. For example, the construction of complex concepts and structural (composition of complex names for concepts) aspects, as well as the relationship between them (Levin, 2017). Other features implemented were dependency relation and the distance to the head of the predicate. Dependency relation..... 
+A great anumber of features were already implemented in the dataset provided for this specific task. The data contained some morphological features. The morphological structure of a word is a crucial component for high-level semantic analysis tasks. Due to the fact morphology is the study of the structure and derivation of complex signals, it can concentrate on the semantic aspect. For example, the construction of complex concepts and structural (composition of complex names for concepts) aspects, as well as the relationship between them (Levin, 2017). Dependency relation..... 
 
 ### 4.3 Advanced Features 
  In combination with the baseline features an advance selection was additionally made. Based on previous research conducted it can be seen that the most common advanced features used were: voice of verb, the parent and child of the token as well as the start and end of the token constituent.  Regarding the target verb, the voice feature of the verb is generally used as it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action. The direct objects of active verbs frequently correspond in semantic role to subjects of passive verbs, the distinction between active and passive verbs is crucial in the relationship between semantic role and grammatical function (Gildea, 2002). Additionally to the dependency relation, the parent and child of the predicate was implemented as an advanced feature. Each sentence consists of multiple tokens, and those tokens are syntactically or grammatically dependent on each other. For example, in the case of “I love you” there is a nominal subject “I”, a direct object “you” and a verbal phrase “love”. The verb love can be said to be a parent of “I” and “you”, and since it doesn't have a parent, we describe it as the root of the sentence. Another example is a sentence like “My dad gave me an apple”, in this sentence the root “gave” has children which are parents of their own children (CITATION - fiinl, 2019). 
 
-The following section will present the machine learning algorithm chosen to implement the chosen features.
+### 5.Machine learning algorithm
 
-### 5.Machine learning algorithm and motivation behind it 
+The machine learning algorithm chosen for these calssification tasks was support vector machines (SVM). 
+
 Possible ML algorithms that can be used: 
   - Log-Linear (vector based linear classification)
   - SVM 
