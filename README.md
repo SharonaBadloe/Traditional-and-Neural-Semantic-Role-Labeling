@@ -56,15 +56,13 @@ The following table gives an overview of all the features selected in order to c
 | Lemma      | Dependency Relation      | Voice|
 | POS | Token     |  Position   |
 | N-grams |  Lemma  | Form-POS on leftmost/rightmost dependent |
-| Binary Representation| |Form-POS left sibling of the argument |
+| | |Form-POS left sibling of the argument |
  
 
 ### 4.1 Baseline Features 
 The aim of this report is to implement basic features evaluating local information in the context of the term or element under consideration, and report characteristics of a candidate argument's internal structure. Moreover these features should provide characteristics of the target verb predicate's characteristics and of the verb predicate's relations with the component under examination.The features chosen for the baseline system are: token, lemma, POS tags, n-grams and binary representation.
 
 The most common and most simple features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used in order to connect a token in text data to its grammatical definition.  To improve the performance of these features, since some predicates  may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (citation). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
-
-Finally, for the baseline representation a new column was created in order to store a binary representation of the predicate as well as for the arguments. If the sentence includes a predicate or an argument then the value “1”  would be assigned while if the element is absent a “0” will be the value stored. 
 
 ### 4.2 Features already adapted in the dataset  
 A great anumber of features were already implemented in the dataset provided for this specific task. The data contained some morphological features. The morphological structure of a word is a crucial component for high-level semantic analysis tasks. Due to the fact morphology is the study of the structure and derivation of complex signals, it can concentrate on the semantic aspect. For example, the construction of complex concepts and structural (composition of complex names for concepts) aspects, as well as the relationship between them (Levin, 2017). Dependency relation..... 
