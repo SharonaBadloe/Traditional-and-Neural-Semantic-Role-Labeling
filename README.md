@@ -69,15 +69,8 @@ A great anumber of features were already implemented in the dataset provided for
 
 ### 5.Machine learning algorithm
 
-The machine learning algorithm chosen for these calssification tasks was support vector machines (SVM). 
+The machine learning algorithm chosen for these calssification tasks was support vector machines (SVM). Based on previous research it can be seen that the most frequently used classifier is SVM. 
 
-Possible ML algorithms that can be used: 
-  - Log-Linear (vector based linear classification)
-  - SVM 
-  - Standard polynominal kernels - Gaussian kernel 
-  - CRF
-  - passive-agressive algorithm 
-  - 
 ### 6.Summary table for all the results generated 
 ### 7. Conclusion
 ### References 
