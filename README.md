@@ -27,9 +27,6 @@ The folder [**results**](https://github.com/gioguitar99/NLP_Assignment_2/tree/ma
 * `Feature Extraction`
 * `Basic Evaluation`
 
-### Prerequisites
-Any requirements needed to run the provided code can be found in [**requirments.txt**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/requirments.txt)
-
 ### Part 1: Traditional SRL
 
 ### 1.Introduction
