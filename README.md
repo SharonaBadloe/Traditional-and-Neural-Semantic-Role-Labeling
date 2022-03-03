@@ -43,7 +43,7 @@ To identify and extract the predicates a rule-based approached was used. The fir
 
 In terms of the argument identification and extraction a rule-based approached was also followed. In order to generate and implement rules for the identification the dataset was analysed in order to identify possible patterns. Six syntactic patterns were identified and were used as the rules for the the identification was conducted,(1) if the dependence is a subject or a prepositional object with the preposition “by”, (2) objects in active sentences, (3) subjects in passive sentences, (4) to + prepositional objects, (5) dative verbs, (6) Frequently used adjectives: now, how, already. All instances that followed any of the rules was classified as "ARG" and was stored in a new dataset that would contained all the results from the identification procedure. The same step as the predicate procedure was followed and all gold labels were extracted for evaluation. 
 
-### 4.Features 
+### 3.Features 
 
 The following table gives an overview of all the features selected in to carry out the classification tasks. The procedure of implementing the features as well as the motivation behind the selection will be described in greater detail in the following sections.  
 
@@ -56,19 +56,19 @@ The following table gives an overview of all the features selected in to carry o
 | | |Form-POS left sibling of the argument |
  
 
-### 4.1 Baseline Features 
+### 3.1 Baseline Features 
 
 The aim of this report is to implement a variety of features that can capture the information requested to correctly carry out the classification process. Before, presenting the features chosen for this research, it is worth mentioning that the dataset provided for this specific task had already some features implemented.The data contained both syntactic and morphological features (token, lemma, dependency relation).
 
 The features chosen for the baseline system are: token, lemma, POS tags, n-grams.The most common and most simple features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used to connect a token in text data to its grammatical definition.  To improve the performance of these features, since some predicates may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (Lapponi et al., 2012). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
  
 
-### 4.2 Advanced Features 
+### 3.2 Advanced Features 
 
- In combination with the baseline features an advance selection was additionally made. Based on previous research conducted it can be seen that the most common advanced features used were: voice of verb, child of the token,the start and end of the token constituent as well as the position of the argument with respect to the predicate. Regarding the target verb, the voice feature of the verb is generally used as it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action. The direct objects of active verbs frequently correspond in semantic role to subjects of passive verbs, the distinction between active and passive verbs is crucial in the relationship between semantic role and grammatical function (Gildea, 2002). The position of the argument with repsect to the predicate (left / right English)
- Additionally to the dependency relation, the child of the predicate was implemented as an advanced feature. Each sentence consists of multiple tokens, and those tokens are syntactically or grammatically dependent on each other. For example, in the sentence “My dad gave me an apple”,the root “gave” has children which are parents of their own children (fiinl, 2019). 
+In combination with the baseline features an advance selection was additionally made. This selection was strongly motivated form previous research done on SRL. The following list of features were implemented: (1) head, (2)voice of the verb, (3) position of the argument with the respect to the predicate, (4)  Form/part-of-speech tag of the leftmost/rightmost dependent of the argument, (5) Form/part-of-speech tag of the left sibling of the argument. Regarding the target verb, the voice feature of the verb is generally used as it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). 
 
-### 5.Machine learning algorithm
+
+### 4.Machine learning algorithm
 
 The machine learning algorithm chosen for these calssification tasks was support vector machines (SVM). Support-vector machines are supervised learning models using
 learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seeen from previous studies on SRL that the most frequently used classifier was SVM. Among the numerous classification algorithms, SVM most often used. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
@@ -83,3 +83,13 @@ learning algorithms that evaluate data for classification and regression analysi
 | | | |
 ### 7. Conclusion
 ### References 
+
+Amjad Abu-Jbara and Dragomir Radev. 2012. Umichigan: A conditional random field model for resolving the
+scope of negation. In * SEM 2012: The First Joint Conference on Lexical and Computational Semantics–
+Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth
+International Workshop on Semantic Evaluation (SemEval 2012), pages 328–334.
+
+Emanuele Lapponi, Erik Velldal, Lilja Øvrelid, and Jonathon Read. 2012. Uio 2: sequence-labeling negation using
+dependency features. In * SEM 2012: The First Joint Conference on Lexical and Computational Semantics–
+Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth
+International Workshop on Semantic Evaluation (SemEval 2012), pages 319–327.
