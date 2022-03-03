@@ -93,3 +93,7 @@ Emanuele Lapponi, Erik Velldal, Lilja Øvrelid, and Jonathon Read. 2012. Uio 2: 
 dependency features. In * SEM 2012: The First Joint Conference on Lexical and Computational Semantics–
 Volume 1: Proceedings of the main conference and the shared task, and Volume 2: Proceedings of the Sixth
 International Workshop on Semantic Evaluation (SemEval 2012), pages 319–327.
+
+Daniel Gildea, Daniel Jurafsky. 2002. Automatic Labeling of Semantic Roles.
+
+Xavier Carreras and Llu´ıs Marquez. 2005. Introduction to the CoNLL-2005 Shared Task: Semantic Role Labeling. Proceedings of the 9th Conference on Computational Natural Language Learning (CoNLL), pages 152–164
