@@ -62,6 +62,7 @@ The aim of this report is to implement a variety of features that can capture th
 
 The features chosen for the baseline system are: token, lemma, POS tags, n-grams.The most common and most simple features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used to connect a token in text data to its grammatical definition.  To improve the performance of these features, since some predicates may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (Lapponi et al., 2012). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
  
+- Feature ablation and baseline briefly mention the steps 
 
 ### 3.2 Advanced Features 
 
@@ -74,13 +75,9 @@ The machine learning algorithm chosen for these calssification tasks was support
 learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seeen from previous studies on SRL that the most frequently used classifier was SVM. Among the numerous classification algorithms, SVM most often used. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
 ### 6.Summary table for all the results generated 
-      |         |   |
-| :-------------: |:-------------:| :-----:|
-|  |  | |
-|   |  | |
-|  |   |   |
-|  |  | |
-| | | |
+
+Three evaluations: Predicate and argument identification and argument classification 
+
 ### 7. Conclusion
 ### References 
 
