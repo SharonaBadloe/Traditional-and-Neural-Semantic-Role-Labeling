@@ -35,29 +35,30 @@ The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/mai
 The NLP classification task presented and analyzed in this report is Semantic Role Labelling (SRL). Semantic Role labelling is the process of identifying semantic relations between predicates and their related participants and characteristcs (Carreras, 2005). Semantic argument identification and classification are the two subtasks within SRL. In an argument classification task, each syntactic element in a sentence is classified as a semantic argument or a non-argument using semantic argument identification. While semantic argument classification entails categorizing each semantic argument into one of several semantic roles, such as ARG0, ARG1, and so on. The aim of this report is to present the creation of a machine learning algorithm system that can identify verb arguments in a sentence and classify them with their semantic role. 
 
 
-### 2.Identification and Extraction 
+### 2. Predicate and Argument Identification (and Evaluation) 
   ### 2.1 Rule-based Predicates 
   
-To identify and extract the predicates a rule-based approached was used. The first step of the procedure was to read and load the given dataset using the external package, pandas. Then the dataset was combined with an external library SpaCy to process the data. After analyzing the columns within the dataset, it was decided that the relevant column for the predicate identification was XPOS. This column contained POS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As predicates tend to refer to verbs it was decided that the rule to identify the predicates will be: if the XPOS tag of a token is one of the following: VBP, VBD, VBZ, VBN, and VB then it is a predicate. These labels cover both regular and irregular forms (inflection and derivation, such as 3rd person, tense, affixes) of the verb. Every instance that was detected with the chosen abbreviation was labels as “PRED”. After the identification process was done, all predicates were extracted and stored in a new dataset with the corresponding gold label for each predicate. The extracted predicates and the gold labels are then used to evaluate this sub-task. 
+To identify and extract the predicates a rule-based approached was used. The first step of the procedure was to read and load the given dataset using the external package pandas. Then the dataset was combined with the external library SpaCy to process the data. After analyzing the columns of the dataset, it was decided that the relevant column for the predicate identification was "XPOS". This column contained PoS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As predicates tend to refer to verbs, it was decided that the rule to identify the predicates would have been the following: if the XPOS tag of a token corresponds to VBP, VBD, VBZ, VBN, or VB, then the token is a predicate. These labels cover both regular and irregular forms both in terms of inflection and derivation (such as 3rd person, tense, affixes etc.). Every detected instance was labeled as “PRED”. After the identification process, all predicates were stored in a new dataset, with the corresponding gold label to each predicate. The extracted predicates and the gold labels are then used to evaluate this sub-task.
 
   ### 2.2 Rule-based Arguments 
 
-In terms of the argument identification and extraction a rule-based approached was also followed. In order to generate and implement rules for the identification, the dataset was analysed in order to identify possible patterns. Six syntactic patterns were identified and were used as the rules for the identification process: (1) if the dependence is a subject or a prepositional object with the preposition “by”; (2) objects in active sentences; (3) subjects in passive sentences; (4) to + prepositional objects; (5) dative verbs; (6) frequently used adjectives: now, how, already. All instances that followed any of the rules were classified as "ARG" and were stored in a new dataset with the corresponding gold labels. The process was then evaluated.
+In terms of argument identification, a rule-based approach was also followed. In order to generate and implement rules for the identification, the dataset was carefully analyzed to identify relevant patterns. Six syntactic patterns were identified and used as rules for the identification process: (1) if the dependency is a subject or a prepositional object with the preposition “by”; (2) objects in active sentences; (3) subjects in passive sentences; (4) "to" + prepositional objects; (5) datives depending from certain verbs (e.g. "me" in "give me"); (6) frequent adjectives: "now", "how", "already". All instances that followed any of the rules were classified as "ARG" and were stored in a new dataset with the corresponding gold labels. The process was then evaluated.
+
 
 ### 3. Features 
 
-The following table gives an overview of all the features selected to carry out the classification tasks. The procedure of implementing the features as well as the motivation behind the selection will be described in greater detail in the following sections.  
+The following table provides an overview of all the features selected to carry out the classification task. The procedure of implementing the features, as well as the motivation behind the selection, will be described in greater detail in the following sections.
 
-| Baseline Features | Provided Features          | Advanced Features  |
-| :-----------: |:-------------:| :-----:|
-| Token         | Morphological Features |Token head of a target token |
-| Lemma         | Dependency Relation      | Pos head of a target token|
-| PoS | Token   | Voice |
-| Bigram (target+next)|  Lemma  | PoS of left/rightmost dependent |
-| Trigram (target+2 next)| | PoS left sibling of the argument |
-| Postag bigram | |List of ancestors |
-| Postag trigram| |List of children |
-|               | |Lenght of lists (ancestors and children) |
+| Baseline Features       | Provided Features       | Advanced Features                        |
+| :-----------:           |:-------------:          | :-----:                                  |
+| Token                   | Morphological Features  | Token head of a target token             |
+| Lemma                   | Dependency Relation     | Pos head of a target token               |
+| PoS                     | Token                   | Voice                                    |
+| Bigram (target+next)    | Lemma                   | PoS of left/rightmost dependent          |
+| Trigram (target+2 next) |                         | PoS left sibling of the argument         |
+| Postag bigram.          |                         | List of ancestors                        |
+| Postag trigram.         |                         | List of children                         |
+|                         |                         | Lenght of lists (ancestors and children) |
  
 
 ### 3.1 Baseline Features 
@@ -73,7 +74,7 @@ The features chosen for the baseline system are: token, lemma, POS tags, token b
  
 ### 3.2 Provided Features
 It is worth mentioning that the dataset provided for this specific task had already some features implemented. The data contained both syntactic and morphological features (token, lemma, dependency relation). Hence, we did not extracted those features by ourselves. The features we re-used were:
-- **Morphological Features:** ???
+- **Morphological Features:** -- ??? --
 - **Dependency relation:** This feature gets the dependency relation between a target token and its head. It is useful for argument classification since some relations (such as "nsubj") are likely to correspond to a certain argument (such as "ARG0"). 
 
 
