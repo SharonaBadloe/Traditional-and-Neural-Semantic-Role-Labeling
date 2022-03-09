@@ -92,12 +92,12 @@ In combination with the baseline features an advance selection was additionally 
 -  **Length of lists:** This feature measures how much a token is embedded within the dependency structure. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
 
 
-### 4. Machine learning algorithm
+### 4. Machine Learning Algorithm
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
 
-### 5.Summary table for all the results generated 
+### 5.Summary Table for all the Results Generated 
 
 Three evaluations: Predicate and argument identification and argument classification
 
