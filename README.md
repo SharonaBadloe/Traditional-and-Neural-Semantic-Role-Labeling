@@ -80,11 +80,11 @@ In combination with the baseline features an advance selection was additionally 
 - **Voice:** The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). It says if the predicate is passive or active. It is supposed to target the agent and the patient of a sentence, helping to highlight the different patterns that contradistinguish them depending on the voice. For example, in active sentences the agent corresponds mostly to the syntactic subject, but in passive sentences it is usually the "by + noun" pattern. On the other hand, the patient corresponds to the syntactic object in active sentence, but to the subject in passive sentences. This feature has been designed to try to make the system capture these changes.
 - **PoS of the leftmost/rightmost dependent:** The grammatical information of the PoS tag can provide additional information for the surronding cues. For the identification procedure of the argument, this feature is able to analyze and generate possible grammatical patterns. For example in "Sybren likes tea", "likes" has two nouns as the left/right most dependent and they correspond to ARG0 and ARG1. It is expected that this relation would be a frequent instance in the data. Another pattern identification example is "Sybren works at the bar", in this case "works" has a noun and a preposition as the rightmost/leftmost dependent. Within the sentence a new argument identification label pattern is generated ARG0 and ARGM-LOC.
 - **PoS of the left sibling of the argument:** -- Sharona why? --
--  **List of ancestors:** 
--  **List of children:**
--  **Length of lists:**
+-  **List of ancestors:** -- Sharona why?--
+-  **List of children:** -- Sharona why?--
+-  **Length of lists:** This feature measures how much a token is embedded within the dependency structure. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
 
-### 4.Machine learning algorithm
+### 4. Machine learning algorithm
 
 The machine learning algorithm chosen for these calssification tasks was support vector machines (SVM). Support-vector machines are supervised learning models using
 learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seeen from previous studies on SRL that the most frequently used classifier was SVM. Among the numerous classification algorithms, SVM most often used. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
