@@ -64,10 +64,10 @@ The following table gives an overview of all the features selected to carry out 
 The aim of this report is to implement a variety of features that can capture the information requested to correctly carry out the classification process. Before, presenting the features chosen for this research, it is worth mentioning that the dataset provided for this specific task had already some features implemented.The data contained both syntactic and morphological features (token, lemma, dependency relation).
 
 The features chosen for the baseline system are: token, lemma, POS tags, token bigram/trigrams and POS bigram/trigram):
-- Token/lemma: Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
-- PoS tag: It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
-- Token bigram/trigram: Token bigram and trigram are used to look at the surrondings cues of the token (e.g. previous or next token) (Lapponi et al., 2012). This can be helpful in the identification and classification procedure as it can idenfity potential syntactic patterns. 
-- PoS tag of the bigram/trigram: As the previous feature can be helpful to identify patterns within the dataset the POS tag of the trigram and bigram will give a better understanding of their grammatical definition. 
+- **Token/lemma:** Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
+- **PoS tag:** It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
+- **Token bigram/trigram:** Token bigram and trigram are used to look at the surrondings cues of the token (e.g. previous or next token) (Lapponi et al., 2012). This can be helpful in the identification and classification procedure as it can idenfity potential syntactic patterns. 
+- **PoS tag of the bigram/trigram:** As the previous feature can be helpful to identify patterns within the dataset the POS tag of the trigram and bigram will give a better understanding of their grammatical definition. 
  
 
 
@@ -75,14 +75,14 @@ The features chosen for the baseline system are: token, lemma, POS tags, token b
 
 In combination with the baseline features an advance selection was additionally made. This selection was strongly motivated form previous research done on SRL. The following list of features were implemented:
 
-- Token head of target token: arguments tend to rely on the syntactic structure, therefore the head of the target token can possibly target a specific argument. 
-- PoS head of the target token: the corresponding PoS tag is useful when it correlates with the head due to the additional grammatical information that is likely to provide a argument pattern. 
-- Voice: The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). It says if the predicate is passive or active. It is supposed to target the agent and the patient of a sentence, helping to highlight the different patterns that contradistinguish them depending on the voice. For example, in active sentences the agent corresponds mostly to the syntactic subject, but in passive sentences it is usually the "by + noun" pattern. On the other hand, the patient corresponds to the syntactic object in active sentence, but to the subject in passive sentences. This feature has been designed to try to make the system capture these changes.
-- PoS of the leftmost/rightmost dependent: The grammatical information of the PoS tag can provide additional information for the surronding cues. For the identification procedure of the argument, this feature is able to analyze and generate possible grammatical patterns. For example in "Sybren likes tea", "likes" has two nouns as the left/right most dependent and they correspond to ARG0 and ARG1. It is expected that this relation would be a frequent instance in the data. Another pattern identification example is "Sybren works at the bar", in this case "works" has a noun and a preposition as the rightmost/leftmost dependent. Within the sentence a new argument identification label pattern is generated ARG0 and ARGM-LOC.
-- PoS of the left sibling of the argument:
--  List of ancestors:
--  List of children:
--  Length of lists:
+- **Token head of target token:** arguments tend to rely on the syntactic structure, therefore the head of the target token can possibly target a specific argument. 
+- **PoS head of the target token:** the corresponding PoS tag is useful when it correlates with the head due to the additional grammatical information that is likely to provide a argument pattern. 
+- **Voice:** The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). It says if the predicate is passive or active. It is supposed to target the agent and the patient of a sentence, helping to highlight the different patterns that contradistinguish them depending on the voice. For example, in active sentences the agent corresponds mostly to the syntactic subject, but in passive sentences it is usually the "by + noun" pattern. On the other hand, the patient corresponds to the syntactic object in active sentence, but to the subject in passive sentences. This feature has been designed to try to make the system capture these changes.
+- **PoS of the leftmost/rightmost dependent:** The grammatical information of the PoS tag can provide additional information for the surronding cues. For the identification procedure of the argument, this feature is able to analyze and generate possible grammatical patterns. For example in "Sybren likes tea", "likes" has two nouns as the left/right most dependent and they correspond to ARG0 and ARG1. It is expected that this relation would be a frequent instance in the data. Another pattern identification example is "Sybren works at the bar", in this case "works" has a noun and a preposition as the rightmost/leftmost dependent. Within the sentence a new argument identification label pattern is generated ARG0 and ARGM-LOC.
+- **PoS of the left sibling of the argument:**
+-  **List of ancestors:**
+-  **List of children:**
+-  **Length of lists:**
 
 ### 4.Machine learning algorithm
 
