@@ -37,32 +37,35 @@ The natural language processing classification task presented and analysed in th
 ### 2.Identification and Extraction 
   ### 2.1 Rule-based Predicates 
   
-To identify and extract the predicates a rule-based approached was used. The first step of the procedure was to read and load the given dataset using the external package, pandas. Then the dataset was combined with an external library SpaCy to process the data. After analyzing the columns within the dataset, it was decided that the relevant column for the predicate identification was XPOS. This column contained POS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As predicates tend to refer to verbs it was decided that the rule to identify the predicates will be: if the XPOS tag of a token is one of the following: VBP, VBD, VBZ, VBN, and VB then it is a predicate. These labels cover both regular and irregular forms (inflection and derivation) of the verb. Every instance that was detected with the chosen abbreviation was labels as “PRED”. After the identification process was done all predicated were extracted and stored in a new dataset. Finally, the corresponding gold label for each predicate was also extracted for evaluation reasons. 
+To identify and extract the predicates a rule-based approached was used. The first step of the procedure was to read and load the given dataset using the external package, pandas. Then the dataset was combined with an external library SpaCy to process the data. After analyzing the columns within the dataset, it was decided that the relevant column for the predicate identification was XPOS. This column contained POS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As predicates tend to refer to verbs it was decided that the rule to identify the predicates will be: if the XPOS tag of a token is one of the following: VBP, VBD, VBZ, VBN, and VB then it is a predicate. These labels cover both regular and irregular forms (inflection and derivation, such as 3rd person, tense, affixes) of the verb. Every instance that was detected with the chosen abbreviation was labels as “PRED”. After the identification process was done, all predicates were extracted and stored in a new dataset with the corresponding gold label for each predicate. The extracted predicates and the gold labels are then used to evaluate this sub-task. 
 
   ### 2.2 Rule-based Arguments 
 
-In terms of the argument identification and extraction a rule-based approached was also followed. In order to generate and implement rules for the identification the dataset was analysed in order to identify possible patterns. Six syntactic patterns were identified and were used as the rules for the the identification was conducted,(1) if the dependence is a subject or a prepositional object with the preposition “by”, (2) objects in active sentences, (3) subjects in passive sentences, (4) to + prepositional objects, (5) dative verbs, (6) Frequently used adjectives: now, how, already. All instances that followed any of the rules was classified as "ARG" and was stored in a new dataset that would contained all the results from the identification procedure. The same step as the predicate procedure was followed and all gold labels were extracted for evaluation. 
+In terms of the argument identification and extraction a rule-based approached was also followed. In order to generate and implement rules for the identification, the dataset was analysed in order to identify possible patterns. Six syntactic patterns were identified and were used as the rules for the identification process: (1) if the dependence is a subject or a prepositional object with the preposition “by”; (2) objects in active sentences; (3) subjects in passive sentences; (4) to + prepositional objects; (5) dative verbs; (6) frequently used adjectives: now, how, already. All instances that followed any of the rules were classified as "ARG" and were stored in a new dataset with the corresponding gold labels. The process was then evaluated.
 
-### 3.Features 
+### 3. Features 
 
-The following table gives an overview of all the features selected in to carry out the classification tasks. The procedure of implementing the features as well as the motivation behind the selection will be described in greater detail in the following sections.  
+The following table gives an overview of all the features selected to carry out the classification tasks. The procedure of implementing the features as well as the motivation behind the selection will be described in greater detail in the following sections.  
 
 | Baseline Features       | Dataset Features          | Advanced Features  |
 | :-------------: |:-------------:| :-----:|
-| Token      | Morphological Features |Head |
-| Lemma      | Dependency Relation      | Voice|
-| POS | Token     |  Position   |
-| N-grams |  Lemma  | Form-POS on leftmost/rightmost dependent |
-| | |Form-POS left sibling of the argument |
+| Token      | Morphological Features |Token head of a target token |
+| Lemma      | Dependency Relation      | Pos head of a target token|
+| POS | Token   | Voice |
+| Bigram (target+next)|  Lemma  | Form-POS on leftmost/rightmost dependent |
+| Trigram (target+2 next)| |Form-POS left sibling of the argument |
+| Postag bigram| |List of ancestors |
+| Postag trigram| |List of children |
+| Lemma of the predicate| |Lenght of lists (ancestors and children) |
  
 
 ### 3.1 Baseline Features 
 
 The aim of this report is to implement a variety of features that can capture the information requested to correctly carry out the classification process. Before, presenting the features chosen for this research, it is worth mentioning that the dataset provided for this specific task had already some features implemented.The data contained both syntactic and morphological features (token, lemma, dependency relation).
 
-The features chosen for the baseline system are: token, lemma, POS tags, n-grams.The most common and most simple features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used to connect a token in text data to its grammatical definition.  To improve the performance of these features, since some predicates may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (Lapponi et al., 2012). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
+The features chosen for the baseline system are: token, lemma, POS tags, n-grams (bigram and trigrams). The most common and simplest features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used to connect a token in text data to its grammatical definition. To improve the performance of these features, since some predicates may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (Lapponi et al., 2012). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
  
-- Feature ablation and baseline briefly mention the steps 
+baseline briefly mention the steps 
 
 ### 3.2 Advanced Features 
 
