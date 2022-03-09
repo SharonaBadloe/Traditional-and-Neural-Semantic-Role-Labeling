@@ -56,21 +56,33 @@ The following table gives an overview of all the features selected to carry out 
 | Trigram (target+2 next)| |Form-POS left sibling of the argument |
 | Postag bigram| |List of ancestors |
 | Postag trigram| |List of children |
-| Lemma of the predicate| |Lenght of lists (ancestors and children) |
+| | |Lenght of lists (ancestors and children) |
  
 
 ### 3.1 Baseline Features 
 
 The aim of this report is to implement a variety of features that can capture the information requested to correctly carry out the classification process. Before, presenting the features chosen for this research, it is worth mentioning that the dataset provided for this specific task had already some features implemented.The data contained both syntactic and morphological features (token, lemma, dependency relation).
 
-The features chosen for the baseline system are: token, lemma, POS tags, n-grams (bigram and trigrams). The most common and simplest features are lemma and token. A token is “the word or the punctuation mark as it appears in the sentence” (Abu-Jbara and Radev, 2012, p.331) while a lemma is the root form of a token (ibid); for instance, the word “undivided” within a sentence is a token and “divide” would be the corresponding lemma. They both are beneficial because they divide the text data into pieces and thus make it easier for the classifier to distinguish. Apart from lemmatization and tokenization, Part of Speech (POS), is also a commonly used feature in NLP tasks. POS is used to connect a token in text data to its grammatical definition. To improve the performance of these features, since some predicates may consist of multiple words, it can be helpful to include additional features that look at the surrounding cues, for instance, previous token, previous lemma, or n-grams (Lapponi et al., 2012). The feature n-gram is used to look at the left and/or right candidate cues (Lapponi et al., 2012) and can be used on a token-, a word-, or a sentence-level.
+The features chosen for the baseline system are: token, lemma, POS tags, token bigram/trigrams and POS bigram/trigram):
+- Token/lemma: Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
+- PoS tag: It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
+- Token bigram/trigram: Token bigram and trigram are used to look at the surrondings cues of the token (e.g. previous or next token) (Lapponi et al., 2012). This can be helpful in the identification and classification procedure as it can idenfity potential syntactic patterns. 
+- PoS tag of the bigram/trigram: As the previous feature can be helpful to identify patterns within the dataset the POS tag of the trigram and bigram will give a better understanding of their grammatical definition. 
  
-baseline briefly mention the steps 
+
 
 ### 3.2 Advanced Features 
 
-In combination with the baseline features an advance selection was additionally made. This selection was strongly motivated form previous research done on SRL. The following list of features were implemented: (1) head, (2)voice of the verb, (3) position of the argument with the respect to the predicate, (4)  Form/part-of-speech tag of the leftmost/rightmost dependent of the argument, (5) Form/part-of-speech tag of the left sibling of the argument. Regarding the target verb, the voice feature of the verb is generally used as it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). 
+In combination with the baseline features an advance selection was additionally made. This selection was strongly motivated form previous research done on SRL. The following list of features were implemented:
 
+- Token head of target token: The head of the target 
+- POS head of the target token:
+- Voice: it is able to identify if the predicate is passive or active. The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). 
+- Form/POS of the left most/rightmost dependent: 
+- Form/POS of the left sibling of the argument:
+-  List of ancestors:
+-  List of children:
+-  Length of lists:
 
 ### 4.Machine learning algorithm
 
