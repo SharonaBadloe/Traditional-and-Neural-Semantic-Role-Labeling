@@ -25,7 +25,19 @@ CODE % python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv
 
 
 
-  <br /><br />and also
+
+
+
+
+
+
+
+
+
+
+
+
+and also
 CODE % python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
   <br /><br />and also
 CODE % python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
