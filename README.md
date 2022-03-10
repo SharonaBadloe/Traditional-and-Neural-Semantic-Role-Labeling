@@ -22,6 +22,8 @@ This data was preprocessed and duplicated before being used as an input for Part
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following scripts:
 * `main.py` This file carries out the entire experiment (feature extraction,
 training, testing)
+* `conll_to_json.py` This file converts the provided conll files into the json format requested to run Part 2.
+* `duplicate_conll.py` This file preprocesses the provided files to duplicate the sentences (See Section 2).  
 * `readme_for_execution.md` This readme includes the information to run the main functions in the terminal 
 
 ### Results
@@ -35,8 +37,7 @@ The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/mai
 
 ### 1. Introduction 
 
-The NLP classification task presented and analyzed in this report is Semantic Role Labelling (SRL). Semantic Role labelling is the process of identifying semantic relations between predicates and their related participants and characteristcs (Carreras, 2005). Semantic argument identification and classification are the two subtasks within SRL. In an argument classification task, each syntactic element in a sentence is classified as a semantic argument or a non-argument using semantic argument identification. While semantic argument classification entails categorizing each semantic argument into one of several semantic roles, such as ARG0, ARG1, and so on. The aim of this report is to present the creation of a machine learning algorithm system that can identify verb arguments in a sentence and classify them with their semantic role. 
-
+The NLP classification task presented and analyzed in this report is Semantic Role Labelling (SRL). Semantic Role Labelling is the process of identifying semantic relations between predicates and their related participants and characteristcs (Carreras, 2005). Semantic argument identification and classification are the two subtasks within SRL. In an argument classification task, each syntactic element in a sentence is classified as a semantic argument or a non-argument using semantic argument identification. While semantic argument classification entails categorizing each semantic argument into one of several semantic roles, such as ARG0, ARG1, and so on. The aim of this report is to present the creation of a machine learning algorithm system that can identify verb arguments in a sentence and classify them with their semantic role. 
 
 ### 2. Predicate and Argument Identification (and Evaluation) 
 
@@ -50,10 +51,9 @@ To identify and extract the predicates a rule-based approached was used. The fir
 
 In terms of argument identification, a rule-based approach was also followed. In order to generate and implement rules for the identification, the dataset was carefully analyzed to identify relevant patterns. Six syntactic patterns were identified and used as rules for the identification process: (1) if the dependency is a subject or a prepositional object with the preposition “by”; (2) objects in active sentences; (3) subjects in passive sentences; (4) "to" + prepositional objects; (5) datives depending from certain verbs (e.g. "me" in "give me"); (6) frequent adjectives: "now", "how", "already". All instances that followed any of the rules were classified as "ARG" and were stored in a new dataset with the corresponding gold labels. The process was then evaluated.
 
-
 ### 3. Features 
 
-The following table provides an overview of all the features selected to carry out the classification task. The procedure of implementing the features, as well as the motivation behind the selection, will be described in greater detail in the following sections.
+The following table provides an overview of all the features selected to carry out the classification task. The procedure of implementing the features, as well as the motivation behind the selection, will be described in greater detail in the following subsections.
 
 | Baseline Features         | Provided Features       | Advanced Features                        |
 | :-----------:             | :-------------:         | :-----:                                  |
@@ -65,26 +65,21 @@ The following table provides an overview of all the features selected to carry o
 | Postag bigram             |                         |                                          |
 | Postag trigram            |                         |                                          |
 
-
 ### 3.1 Baseline Features 
 
-The aim of this report is to implement a variety of features that can capture the information requested to correctly carry out the classification process.
-
-The features chosen for the baseline system are: token, lemma, POS tags, token bigram/trigrams and POS bigram/trigram):
 - **Token/lemma:** Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
 - **PoS tag:** It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
 - **Token bigram/trigram:** Token bigram and trigram are used to look at the surrondings cues of the token (e.g. previous or next token) (Lapponi et al., 2012). This can be helpful in the identification and classification procedure as it can idenfity potential syntactic patterns. 
 - **PoS tag of the bigram/trigram:** As the previous feature can be helpful to identify patterns within the dataset the POS tag of the trigram and bigram will give a better understanding of their grammatical definition. 
  
- 
 ### 3.2 Provided Features
+
 It is worth mentioning that the dataset provided for this specific task had already some features implemented. The data contained both syntactic and morphological features (token, lemma, dependency relation). Hence, we did not extracted those features by ourselves. The features we re-used were:
 - **Dependency relation:** This feature gets the dependency relation between a target token and its head. It is useful for argument classification since some relations (such as "nsubj") are likely to correspond to a certain argument (such as "ARG0"). 
 
-
 ### 3.3 Advanced Features 
 
-In combination with the baseline features an advance selection was additionally made. This selection was strongly motivated form previous research done on SRL. The following list of features were implemented:
+In combination with the baseline features an advanced selection was additionally made. This selection was strongly motivated form previous research done on SRL: 
 
 - **Token head of target token:** arguments tend to rely on the syntactic structure, therefore the head of the target token can possibly target a specific argument. 
 - **PoS head of the target token:** the corresponding PoS tag is useful when it correlates with the head due to the additional grammatical information that is likely to provide a argument pattern. 
@@ -92,18 +87,20 @@ In combination with the baseline features an advance selection was additionally 
 -  **Length of list of ancestors and children:** This feature measures how much a token is embedded within the dependency structure, by finding the list of ancestors and children of a target token and by measuring its length. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
 -  **Corresponding predicate of an argument:** Since each argument depends on its predicate, and each predicate does not takes the same types of arguments, it was decided to use it as a feature. This way, it is expected that the classifier would make more accurate predictions.
 
-
-### 4. Machine Learning Algorithm
+### 4. Argument Classification (with Machine Learning)
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
-For the machine learning classification, the features were extracted in a new file with the corresponding gold labels from the duplicated file. It was decided to use all the gold labels and not only the ones corresponding to the arguments and predicates thet were found in the identification procedure. The motivation behind this decision was as it was aimed to train a more general classifier that ideally would be able to capture a larger number of arguments, instead of just relying on the rule-based approached. 
+For the machine learning classification, the features were extracted in a new file with the corresponding gold labels from the duplicated file. It was decided to use all the gold labels and not only the ones corresponding to the arguments and predicates thet were found in the identification procedure. The motivation behind this decision was as it was aimed to train a more general classifier that ideally would be able to capture a larger number of arguments, instead of just relying on the rule-based approached.
 
 ### 5. Summary Table for all the Results Generated 
 
 *Three evaluations: Predicate and argument identification and argument classification*
 
 ### 6. Conclusion
+
+???
+
 ### References 
 
 Amjad Abu-Jbara and Dragomir Radev. 2012. Umichigan: A conditional random field model for resolving the
