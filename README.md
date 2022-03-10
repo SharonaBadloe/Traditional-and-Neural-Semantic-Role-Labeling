@@ -95,7 +95,7 @@ The machine learning algorithm chosen for these classification tasks was Support
 
 ### 5.Summary Table for all the Results Generated 
 
-Three evaluations: Predicate and argument identification and argument classification
+*Three evaluations: Predicate and argument identification and argument classification*
 
 ### 6. Conclusion
 ### References 
