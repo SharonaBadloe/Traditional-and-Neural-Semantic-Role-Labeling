@@ -49,17 +49,16 @@ In terms of argument identification, a rule-based approach was also followed. In
 
 The following table provides an overview of all the features selected to carry out the classification task. The procedure of implementing the features, as well as the motivation behind the selection, will be described in greater detail in the following sections.
 
-| Baseline Features       | Provided Features       | Advanced Features                        |
-| :-----------:           |:-------------:          | :-----:                                  |
-| Token                   | Morphological Features  | Token head of a target token             |
-| Lemma                   | Dependency Relation     | Pos head of a target token               |
-| PoS                     | Token                   | Voice                                    |
-| Bigram (target+next)    | Lemma                   | PoS of left/rightmost dependent          |
-| Trigram (target+2 next) |                         | PoS left sibling of the argument         |
-| Postag bigram.          |                         | List of ancestors                        |
-| Postag trigram.         |                         | List of children                         |
-|                         |                         | Lenght of lists (ancestors and children) |
- 
+| Baseline Features         | Provided Features       | Advanced Features                        |
+| :-----------:             | :-------------:         | :-----:                                  |
+| Token                     | Morphological Features  | Token head of a target token             |
+| Lemma                     | Dependency Relation     | Pos head of a target token               |
+| PoS tag                   |                         | Voice                                    |
+| Bigram (target + next)    |                         | PoS of left/rightmost dependent          |
+| Trigram (target + 2 next) |                         | Lenght of lists (ancestors and children  |
+| Postag bigram             |                         | Corresponding predicate of an argument   |
+| Postag trigram            |                         |                                          |
+
 
 ### 3.1 Baseline Features 
 
@@ -86,10 +85,8 @@ In combination with the baseline features an advance selection was additionally 
 - **PoS head of the target token:** the corresponding PoS tag is useful when it correlates with the head due to the additional grammatical information that is likely to provide a argument pattern. 
 - **Voice:** The voice of the verb refers to the relationship of the subject and the action (Gildea, 2002). It says if the predicate is passive or active. It is supposed to target the agent and the patient of a sentence, helping to highlight the different patterns that contradistinguish them depending on the voice. For example, in active sentences the agent corresponds mostly to the syntactic subject, but in passive sentences it is usually the "by + noun" pattern. On the other hand, the patient corresponds to the syntactic object in active sentence, but to the subject in passive sentences. This feature has been designed to try to make the system capture these changes.
 - **PoS of the leftmost/rightmost dependent:** The grammatical information of the PoS tag can provide additional information for the surronding cues. For the identification procedure of the argument, this feature is able to analyze and generate possible grammatical patterns. For example in "Sybren likes tea", "likes" has two nouns as the left/right most dependent and they correspond to ARG0 and ARG1. It is expected that this relation would be a frequent instance in the data. Another pattern identification example is "Sybren works at the bar", in this case "works" has a noun and a preposition as the rightmost/leftmost dependent. Within the sentence a new argument identification label pattern is generated ARG0 and ARGM-LOC.
-- **PoS of the left sibling of the argument:** -- Sharona why? --
--  **List of ancestors:** -- Sharona why?--
--  **List of children:** -- Sharona why?--
--  **Length of lists:** This feature measures how much a token is embedded within the dependency structure. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
+-  **Length of list of ancestors and children:** This feature measures how much a token is embedded within the dependency structure, by finding the list of ancestors and children of a target token and by measuring its length. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
+-  **Corresponding predicate of an argument:** Since each argument depends on its predicate, and each predicate does not takes the same types of arguments, it was decided to use it as a feature. This way, it is expected that the classifier would make more accurate predictions.
 
 
 ### 4. Machine Learning Algorithm
