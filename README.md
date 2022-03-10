@@ -38,7 +38,7 @@ The NLP classification task presented and analyzed in this report is Semantic Ro
 
 ### 2. Predicate and Argument Identification (and Evaluation) 
 
-In order to carry out the SRL the sentences that has multiple predicates were duplicated, as many times as the amount of predicates included within the sentence. In each duplication the argument of the corresponding predicate was given, during the whole procedure of the experiment the extracted duplications were used as an input. 
+In order to carry out the SRL task, the sentences that had multiple predicates were duplicated as many times as the amount of predicates they included. In each duplication, the specific arguments depending on that corresponding predicate were added. During the whole SRL experiment, the duplications were used as input (both for the rule-based identification and the machine learning classification). 
 
   ### 2.1 Rule-based Predicates 
   
