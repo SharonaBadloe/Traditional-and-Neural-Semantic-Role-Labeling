@@ -18,7 +18,7 @@ def main(argv = None):
     input_file = argv[1] #this one should be "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
     
     #We open the input file as a pandas dataframe and we remove all the NaNs
-    df = pd.read_csv(input_file, sep = '\t', comment = '#', header = None, names = ['col' + str(x) for x in range(12)])
+    df = pd.read_csv(input_file, sep = '\t', comment = '#', header = None, names = ['col' + str(x) for x in range(13)])
     df.dropna(inplace = True)
     
     #We convert some of the original columns into lists that we are going to use later on
