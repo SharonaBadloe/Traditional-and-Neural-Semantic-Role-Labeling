@@ -91,12 +91,12 @@ In combination with the baseline features an advance selection was additionally 
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
-
-### 5.Summary Table for all the Results Generated 
+### 5.Experiment Procedure 
+### 6.Summary Table for all the Results Generated 
 
 *Three evaluations: Predicate and argument identification and argument classification*
 
-### 6. Conclusion
+### 7. Conclusion
 ### References 
 
 Amjad Abu-Jbara and Dragomir Radev. 2012. Umichigan: A conditional random field model for resolving the
