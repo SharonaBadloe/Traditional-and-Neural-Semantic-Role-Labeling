@@ -15,7 +15,7 @@ CODE % python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## To execute conll_to_json.py
 To run this file you need a conll file that is structured in the same way that was provided in the srl_assignment_code.
-The parameters you shoud provide are:
+The parameters you should provide are:
 - Path to CoNLL file
 - Boolean to indicate whether to duplicate or not
 
