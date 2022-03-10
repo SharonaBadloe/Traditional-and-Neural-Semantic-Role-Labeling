@@ -1,12 +1,12 @@
 # Advanced NLP Assignment 2: Traditional and Neural Semantic Role Labeling
 
-The project was carried out by Giorgio Malinverni, Sharona Badloe, Sybren Moolhuizen and Konstantina Andronikou during the seminar NLP Technology taugh by Antske Fokkens and Pia Sommerauer.
+The project was carried out by Giorgio Malinverni, Sharona Badloe, Sybren Moolhuizen and Konstantina Andronikou during the "NLP Technology" course taught by Antske Fokkens and Pia Sommerauer.
 
 This README contains the infromation to run a classifier that performs Semantic Role Labeling (SRL). This work is divided into two parts:
 * `Part 1: Traditional SRL`
 * `Part 2: Neural SRL`
 
-### Data
+### Provided Data
 Development Data:
 * `en_ewt-up-dev.conllu`
 
@@ -15,6 +15,8 @@ Training Data:
 
 Test Data:
 * `en_ewt-up-test.conllu`
+
+This data was preprocessed and duplicated (see 2.) before being used as an input for part 1.
 
 ### Code 
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following script:
