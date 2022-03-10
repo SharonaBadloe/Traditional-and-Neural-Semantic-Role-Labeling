@@ -51,8 +51,8 @@ The following table provides an overview of all the features selected to carry o
 
 | Baseline Features         | Provided Features       | Advanced Features                        |
 | :-----------:             | :-------------:         | :-----:                                  |
-| Token                     | Morphological Features  | Token head of a target token             |
-| Lemma                     | Dependency Relation     | Pos head of a target token               |
+| Token                     | Dependency Relation     | Token head of a target token             |
+| Lemma                     |                         | Pos head of a target token               |
 | PoS tag                   |                         | Voice                                    |
 | Bigram (target + next)    |                         | PoS of left/rightmost dependent          |
 | Trigram (target + 2 next) |                         | Lenght of lists (ancestors and children  |
@@ -73,7 +73,6 @@ The features chosen for the baseline system are: token, lemma, POS tags, token b
  
 ### 3.2 Provided Features
 It is worth mentioning that the dataset provided for this specific task had already some features implemented. The data contained both syntactic and morphological features (token, lemma, dependency relation). Hence, we did not extracted those features by ourselves. The features we re-used were:
-- **Morphological Features:** -- ??? --
 - **Dependency relation:** This feature gets the dependency relation between a target token and its head. It is useful for argument classification since some relations (such as "nsubj") are likely to correspond to a certain argument (such as "ARG0"). 
 
 
