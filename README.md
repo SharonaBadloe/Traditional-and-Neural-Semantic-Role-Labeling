@@ -37,6 +37,9 @@ The NLP classification task presented and analyzed in this report is Semantic Ro
 
 
 ### 2. Predicate and Argument Identification (and Evaluation) 
+
+In order to carry out the SRL the sentences that has multiple predicates were duplicated, as many times as the amount of predicates included within the sentence. In each duplication the argument of the corresponding predicate was given, during the whole procedure of the experiment the extracted duplications were used as an input. 
+
   ### 2.1 Rule-based Predicates 
   
 To identify and extract the predicates a rule-based approached was used. The first step of the procedure was to read and load the given dataset using the external package pandas. Then the dataset was combined with the external library SpaCy to process the data. After analyzing the columns of the dataset, it was decided that the relevant column for the predicate identification was "XPOS". This column contained PoS tag abbreviations that preserved the original value of the dataset with manual annotation and corrections. As predicates tend to refer to verbs, it was decided that the rule to identify the predicates would have been the following: if the XPOS tag of a token corresponds to VBP, VBD, VBZ, VBN, or VB, then the token is a predicate. These labels cover both regular and irregular forms both in terms of inflection and derivation (such as 3rd person, tense, affixes etc.). Every detected instance was labeled as “PRED”. After the identification process, all predicates were stored in a new dataset, with the corresponding gold label to each predicate. The extracted predicates and the gold labels are then used to evaluate this sub-task.
@@ -92,15 +95,13 @@ In combination with the baseline features an advance selection was additionally 
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
-### 5. Experiment Procedure 
+For the machine learning classification, the features were extracted in a new file with the corresponding gold labels from the duplicated file. It was decided to use all the gold labels and not only the ones corresponding to the arguments and predicates thet were found in the identification procedure. The motivation behind this decision was as it was aimed to train a more general classifier that ideally would be able to capture a larger number of arguments, instead of just relying on the rule-based approached. 
 
-bla bla
-
-### 6. Summary Table for all the Results Generated 
+### 5. Summary Table for all the Results Generated 
 
 *Three evaluations: Predicate and argument identification and argument classification*
 
-### 7. Conclusion
+### 6. Conclusion
 ### References 
 
 Amjad Abu-Jbara and Dragomir Radev. 2012. Umichigan: A conditional random field model for resolving the
