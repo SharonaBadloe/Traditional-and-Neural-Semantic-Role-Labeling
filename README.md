@@ -19,16 +19,16 @@ Test Data:
 This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2).
 
 ### Code 
-The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following script:
+The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following scripts:
 * `main.py` This file carries out the entire experiment (feature extraction,
 training, testing)
 * `readme_for_execution.md` This readme includes the information to run the main functions in the terminal 
 
 ### Results
 The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT) consists of the output files of the following components:
-* `Output of identification for predicates and arguments`
-* `Output of the Feature Extraction process`
-* `Output of the predictions`
+* `Output of the identification for predicates and arguments`
+* `Output of the Feature Extraction process on the training, dev and test sets`
+* `Output of the Predictions of the classifier on the test data`
 * `Basic Evaluation (scores and matrices)`
 
 ### Part 1: Traditional SRL
