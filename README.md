@@ -16,7 +16,7 @@ Training Data:
 Test Data:
 * `en_ewt-up-test.conllu`
 
-This data was preprocessed and duplicated (see 2.) before being used as an input for part 1.
+This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2).
 
 ### Code 
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following script:
