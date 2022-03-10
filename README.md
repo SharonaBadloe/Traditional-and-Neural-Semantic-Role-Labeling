@@ -20,7 +20,7 @@ Test Data:
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following script:
 * `main.py` This file carries out the entire experiment (feature extraction,
 training, testing)
-* `readme_for_execution` This 
+* `readme_for_execution.md` This readme includes the information to run the main functions in the terminal 
 
 ### Results
 The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT) consists of the output files of the following components:
@@ -92,11 +92,11 @@ In combination with the baseline features an advance selection was additionally 
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
-### 5.Experiment Procedure 
+### 5. Experiment Procedure 
 
 bla bla
 
-### 6.Summary Table for all the Results Generated 
+### 6. Summary Table for all the Results Generated 
 
 *Three evaluations: Predicate and argument identification and argument classification*
 
