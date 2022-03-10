@@ -92,7 +92,7 @@ def duplicate(list_of_list_of_lists):
     return duplicated_sents
 
 # loop over
-def make_conll(duplicated_sents):
+def make_json(duplicated_sents):
     """
     Turns the duplicated sentences into a string containing the json format
 
@@ -140,10 +140,10 @@ def main():
     clean_split_newline = remove_hashtag(split_newline)
     tab_split = split_on_tab(clean_split_newline)
     duplicated_tab_split = duplicate(tab_split)
-    conll_string = make_conll(duplicated_tab_split)
+    json_string = make_json(duplicated_tab_split)
 
     with open(outfile, 'a') as outputfile:
-        outputfile.write(conll_string)
+        outputfile.write(json_string)
 
 if __name__ == "__main__":
     main()

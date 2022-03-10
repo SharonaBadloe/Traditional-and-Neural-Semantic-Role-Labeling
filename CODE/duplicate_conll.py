@@ -4,7 +4,7 @@ import os
 import sys
 
 infile = sys.argv[1]
-outfile = infile.replace('conll','.duplicated.conll')
+outfile = infile.replace('.conll','.duplicated.conll')
 
 def read_and_split_newline(infile):
     """
