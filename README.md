@@ -60,10 +60,9 @@ The following table provides an overview of all the features selected to carry o
 | Token                     | Dependency Relation     | Token head of a target token             |
 | Lemma                     |                         | Pos head of a target token               |
 | PoS tag                   |                         | Corresponding predicate of an argument   |
-| Bigram (target + next)    |                         | PoS of left/rightmost dependent          |
-| Trigram (target + 2 next) |                         | Lenght of lists (ancestors and children  |
-| Postag bigram             |                         |                                          |
-| Postag trigram            |                         |                                          |
+|                           |                         | PoS of left/rightmost dependent          |
+|                           |                         | Lenght of lists (ancestors and children  |
+
 
 ### 3.1 Baseline Features 
 
