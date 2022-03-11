@@ -186,7 +186,7 @@ def main(input_file):
     spacy_df['gold'] = gold
 
 
-    outfile = input_file.replace('.csv' , '-features_extracted.csv')
+    outfile = input_file.replace('.conll' , '-features_extracted.csv')
 
     (print('writing csv \n'))
     print(spacy_df.head(5))
