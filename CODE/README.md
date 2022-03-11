@@ -1,4 +1,4 @@
-DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) ! The steps to run to carry out the experiment are 1, 2, 5 and 6.
+DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) ! The steps to run to carry out the experiment are just 1, 2, 5 and 6, since 3 and 4 are already comprehended into 5.
 
 ## 1) To execute duplicate_conll.py:
 This script takes as input the original conll file and outputs a duplicated version of the conll, in which the sentences are duplicated according to their number of predicates, and each duplication contains the arguments of a different predicate.
