@@ -25,7 +25,7 @@ The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/
 * `rule-based.py` This script runs the predicate and argument identification with a rule-based approach
 * other scripts used in `main.py`, like `feature_extraction.py` and  `SVM_classifier.py`
 * `main.py` This script carries out the entire experiment (feature extraction, training, testing)
-* `conll_to_json.py` This script converts the provided conll files into the json format requested to run Part 2
+* `conll_to_json.py` This script converts the provided conll files into the json format requested to run the neural network
 
 ### Results
 The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT) consists of the output files of the following components:
