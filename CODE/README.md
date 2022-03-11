@@ -44,7 +44,7 @@ The parameters you should provide are:
 - Path to CoNLL file
 - Boolean to indicate whether to duplicate or not
 
-### example:
+### how to run:
 - python conll_to_json.py "../data/srl_univprop_en.dev.conll" False
 - python conll_to_json.py "../data/srl_univprop_en.train.conll" True 
 
