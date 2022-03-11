@@ -158,14 +158,14 @@ def extract_pos_head(doc, df,nlp):
 
     df['token_head_pos'] = token_head_pos
 
-def main(argv = None):
+def main(input_file):
 
-    if argv is None:
-        argv = sys.argv
-
-    input_file = argv[1]
+    # if argv is None:
+    #     argv = sys.argv
+    #
+    # input_file = argv[1]
     print('reading in df\n')
-    df = pd.read_csv(input_file, sep = '\t', comment = '#', quotechar = "|", header = None, names = ['col' + str(x) for x in range(13)])
+    df = pd.read_csv(input_file, sep = '\t', engine='python',comment = '#', quotechar = "|", header = None, names = ['col' + str(x) for x in range(13)])
     df.dropna(inplace=True)
 
     print('loading spacy_model\n')
@@ -186,7 +186,7 @@ def main(argv = None):
     spacy_df['gold'] = gold
 
 
-    outfile = input_file.replace('.conllu' , '-features_extracted.csv')
+    outfile = input_file.replace('.csv' , '-features_extracted.csv')
 
     (print('writing csv \n'))
     print(spacy_df.head(5))
