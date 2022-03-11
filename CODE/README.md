@@ -11,9 +11,7 @@ DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 ## 3) To execute feature_extraction-py:
 
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv"
-<br/>and also
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
-and also
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 4) To execute SVM_classifier.py:
