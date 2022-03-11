@@ -19,7 +19,7 @@ DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 - ???
 
 ## 5) To execute main.py
-This main function _runs the whole process_: feature extraction + training of the classifier + testing of the classifier:
+This main function runs the following steps: feature extraction + training of the classifier + testing of the classifier:
 
 - ???
 
