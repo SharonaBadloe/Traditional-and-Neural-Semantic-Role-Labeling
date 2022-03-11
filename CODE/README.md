@@ -22,8 +22,8 @@ This script takes as input the duplicated files and outputs new files with the d
 ## 4) To execute SVM_classifier.py:
 This script takes as input the files that result from feature_extraction-py, in order to 1) train a SVM classifier on the new trainingset with the features extracted; 2) test that classifier on the new testset with the features extracted. 
 
-- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_train.csv" ???????FEATURES EXTRACTED
-- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_test.csv"
+- python SVM_classifier.py "../DATA/OUTPUT/feature_extraction_frame_train.csv"
+- python SVM_classifier.py "../DATA/OUTPUT/feature_extraction_frame_test.csv"
 
 ## 5) To execute main.py
 This main function runs the following steps: feature extraction + training of the classifier + testing of the classifier:
