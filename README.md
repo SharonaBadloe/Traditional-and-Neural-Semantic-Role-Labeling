@@ -68,8 +68,6 @@ The following table provides an overview of all the features selected to carry o
 
 - **Token/lemma:** Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
 - **PoS tag:** It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
-- **Token bigram/trigram:** Token bigram and trigram are used to look at the surrondings cues of the token (e.g. previous or next token) (Lapponi et al., 2012). This can be helpful in the identification and classification procedure as it can idenfity potential syntactic patterns. 
-- **PoS tag of the bigram/trigram:** As the previous feature can be helpful to identify patterns within the dataset the POS tag of the trigram and bigram will give a better understanding of their grammatical definition. 
  
 ### 3.2 Provided Features
 
