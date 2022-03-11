@@ -98,7 +98,7 @@ For the machine learning classification, the features were extracted in a new fi
 
 For a better overview of the results please see the pdf file provided: [**RESULTS**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT/RESULTS.pdf). Please note that the scores suffer from the heavy imbalance of the arguments in the data.
 
-### References 
+### 6. References 
 
 Amjad Abu-Jbara and Dragomir Radev. 2012. Umichigan: A conditional random field model for resolving the
 scope of negation. In * SEM 2012: The First Joint Conference on Lexical and Computational Semantics–
