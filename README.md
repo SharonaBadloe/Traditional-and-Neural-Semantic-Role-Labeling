@@ -31,7 +31,6 @@ The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/
 The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT) consists of the output files of the following components:
 * `Output of the identification for predicates and arguments`
 * `Output of the Feature Extraction process on the training, dev and test sets`
-* `Output of the Predictions of the classifier on the test data`
 * `RESULTS.pdf` (scores and matrices)
 
 ### Part 1: Traditional SRL
