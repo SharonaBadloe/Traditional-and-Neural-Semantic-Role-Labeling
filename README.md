@@ -50,7 +50,7 @@ In terms of argument identification, a rule-based approach was also followed. In
 
 The following table provides an overview of all the features selected to carry out the classification task. The procedure of implementing the features, as well as the motivation behind the selection, will be described in greater detail in the following subsections.
 
-| Baseline Features         | Provided Features       | Advanced Features                        |
+| Basic Features            | Provided Features       | Advanced Features                        |
 | :-----------:             | :-------------:         | :-----:                                  |
 | Token                     | Dependency Relation     | Token head of a target token             |
 | Lemma                     |                         | Pos head of a target token               |
