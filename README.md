@@ -56,7 +56,9 @@ The following table provides an overview of all the features selected to carry o
 | Lemma                     |                         | Pos head of a target token               |
 | PoS tag                   |                         | Corresponding predicate of an argument   |
 |                           |                         | PoS of left/rightmost dependent          |
-|                           |                         | Lenght of lists (ancestors and children  |
+|                           |                         | List of ancestors (token level)          |
+|                           |                         | List of Children (token level)           |
+|                           |                         | Lenght of lists (ancestors and children)  |
 
 
 ### 3.1 Baseline Features 
@@ -76,6 +78,7 @@ In combination with the baseline features an advanced selection was additionally
 - **Token head of target token:** arguments tend to rely on the syntactic structure, therefore the head of the target token can possibly target a specific argument. 
 - **PoS head of the target token:** the corresponding PoS tag is useful when it correlates with the head due to the additional grammatical information that is likely to provide a argument pattern. 
 - **PoS of the leftmost/rightmost dependent:** The grammatical information of the PoS tag can provide additional information for the surronding cues. For the identification procedure of the argument, this feature is able to analyze and generate possible grammatical patterns. For example in "Sybren likes tea", "likes" has two nouns as the left/right most dependent and they correspond to ARG0 and ARG1. It is expected that this relation would be a frequent instance in the data. Another pattern identification example is "Sybren works at the bar", in this case "works" has a noun and a preposition as the rightmost/leftmost dependent. Within the sentence a new argument identification label pattern is generated ARG0 and ARGM-LOC.
+-  **List of ancestors and children on a token level** : These features were used in order to generate the lenght of the lists, the following paragraph will explained further the use of the length. 
 -  **Length of list of ancestors and children:** This feature measures how much a token is embedded within the dependency structure, by finding the list of ancestors and children of a target token and by measuring its length. It is expected the argument labels can correlate with this measure and certain argument labels are more likely to have a great length. 
 -  **Corresponding predicate of an argument:** Since each argument depends on its predicate, and each predicate does not takes the same types of arguments, it was decided to use it as a feature. This way, it is expected that the classifier would make more accurate predictions.
 
