@@ -13,7 +13,10 @@ python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
   <br /><br />and also
 python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
-## 3) To execute conll_to_json.py
+## 3) To execute main.py
+This main function _runs the whole process_: feature extraction + training of the classifier + testing of the classifier
+
+## 4) To execute conll_to_json.py
 To run this file you need a conll file that is structured in the same way that was provided in the srl_assignment_code.
 The parameters you should provide are:
 - Path to CoNLL file
