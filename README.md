@@ -54,6 +54,7 @@ The following table provides an overview of all the features selected to carry o
 | :-----------:             | :-------------:         | :-----:                                  |
 | Token                     | Dependency Relation     | Token head of a target token             |
 | Lemma                     |                         | Pos head of a target token               |
+|                           |                         | Token left/right edge                    |
 | PoS tag                   |                         | Corresponding predicate of an argument   |
 |                           |                         | PoS of left/rightmost dependent          |
 |                           |                         | List of ancestors (token level)          |
