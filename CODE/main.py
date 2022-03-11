@@ -10,11 +10,6 @@ if len(sys.argv) > 1:
 else:
     training_file = "../DATA/UP_English-EWT/duplicated_trainpiccolo.csv"
     test_file = "../DATA/UP_English-EWT/duplicated_trainpiccolo.csv"
-print(test_file)
-print(training_file)
-print()
-print()
-print()
 
 #1. We extract the features from the raw training set and test set
 print("PART 1: FEATURE EXTRACTION FROM THE ORIGINAL TRAINING AND TEST SETS")
@@ -32,11 +27,5 @@ print()
 print()
 print()
 main2(training_file.replace('.csv' , '-features_extracted.csv'), test_file.replace('.csv' , '-features_extracted.csv'))
-
-#3. We test the svm classifier on the extracted-features-test file
-print("PART 3: TESTING THE CLASSIFIER ON THE TEST FILE (WITH FEATURES EXTRACTED)")
-print()
-print()
-print()
 
 print("SRL EXPERIMENT CARRIED OUT SUCCESSFULLY")
