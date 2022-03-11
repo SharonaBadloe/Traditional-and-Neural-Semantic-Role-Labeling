@@ -96,12 +96,7 @@ For the machine learning classification, the features were extracted in a new fi
 
 ### 5. Summary Table for all the Results Generated 
 
-For a better overview of the results please see the pdf file provided: [**RESULTS**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT/RESULTS.pdf)
-
-
-### 6. Conclusion
-
-???
+For a better overview of the results please see the pdf file provided: [**RESULTS**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT/RESULTS.pdf). Please note that the scores suffer from the heavy imbalance of the arguments in the data.
 
 ### References 
 
