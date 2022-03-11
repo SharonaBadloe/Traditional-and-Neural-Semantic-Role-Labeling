@@ -13,13 +13,14 @@ This script takes as input a duplicated file (we chose to execute it on the test
 - python rule-based.py "../DATA/UP_English-EWT/duplicated_test.conllu"
 
 ## 3) To execute feature_extraction-py:
-This script takes as input the duplicated files and outputs new files with the decided features extracted. 
+DISCLAIMER: THE EXECUTION OF THIS SCRIPT IS ALREADY INCLUDED IN THE main.py SCRIPT. This script takes as input the duplicated files and outputs new files with the decided features extracted. 
 
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv"
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 4) To execute SVM_classifier.py:
+DISCLAIMER: THE EXECUTION OF THIS SCRIPT IS ALREADY INCLUDED IN THE main.py SCRIPT.
 This script takes as input the files that result from feature_extraction-py, in order to 1) train a SVM classifier on the new trainingset with the features extracted; 2) test that classifier on the new testset with the features extracted. 
 
 - python SVM_classifier.py "../DATA/OUTPUT/feature_extraction_frame_train.csv"
