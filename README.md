@@ -88,7 +88,9 @@ In combination with the baseline features an advanced selection was additionally
 
 The machine learning algorithm chosen for these classification tasks was Support Vector Machines (SVM). SVMs are supervised learning models using learning algorithms that evaluate data for classification and regression analysis in machine learning. Moreover, it can be seen from previous studies on SRL that this one was the most frequently used classifier. The kernel approach allows SVMs to do non-linear classification efficiently by implicitly mapping their inputs into high-dimensional feature spaces.
 
-For the machine learning classification, the features were extracted in a new file with the corresponding gold labels from the duplicated file. It was decided to use all the gold labels and not only the ones corresponding to the arguments and predicates thet were found in the identification procedure. The motivation behind this decision was as it was aimed to train a more general classifier that ideally would be able to capture a larger number of arguments, instead of just relying on the rule-based approached.
+For the machine learning classification, the features were extracted in a new file with the corresponding gold labels from the duplicated file. It was decided to use all the gold labels and not only the ones corresponding to the arguments and predicates thet were found in the identification procedure. The motivation behind this decision is that it is aimed to train a more general classifier, that ideally would be able to capture a larger number of arguments, instead of just relying on the rule-based approach.
+
+Hence, the machine learning system is fed with the............................
 
 ### 5. Summary Table for all the Results Generated 
 
