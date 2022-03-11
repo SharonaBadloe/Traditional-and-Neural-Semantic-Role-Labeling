@@ -2,27 +2,28 @@ Be sure to execute the terminal from the correct folder (CODE)
 
 ## 1) To execute duplicate_conll.py:
 
-???
+- ???
 
 ## 2) To execute rule-based.py:
 
-python rule-based.py "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
+- python rule-based.py "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
 
 ## 3) To execute feature_extraction-py:
 
-python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv
-<br /><br />
+- python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv
 and also
-python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
-  <br /><br />and also
-python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
+- python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
+and also
+- python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 4) To execute SVM_classifier.py:
 
-???
+- ???
 
 ## 5) To execute main.py
-This main function _runs the whole process_: feature extraction + training of the classifier + testing of the classifier
+This main function _runs the whole process_: feature extraction + training of the classifier + testing of the classifier:
+
+- ???
 
 ## 6) To execute conll_to_json.py
 To run this file you need a conll file that is structured in the same way that was provided in the srl_assignment_code.
