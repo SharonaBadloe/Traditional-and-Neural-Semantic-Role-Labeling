@@ -8,7 +8,7 @@ import pandas as pd
 
 def columns__to_lists(df):
     """
-    turns datarframe into several lists that are used later on
+    turns dataframe into several lists that are used later on
 
     input:
     df:pandas to_dataframe
