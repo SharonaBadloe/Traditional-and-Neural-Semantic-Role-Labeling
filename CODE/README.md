@@ -2,11 +2,13 @@ DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 
 ## 1) To execute duplicate_conll.py:
 
-- ???
+- python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
+- python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-dev.conllu"
+- python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-test.conllu"
 
 ## 2) To execute rule-based.py:
 
-- python rule-based.py "../DATA/UP_English-EWT/en_ewt-up-test.conllu"
+- python rule-based.py "../DATA/UP_English-EWT/duplicated_test.conllu"
 
 ## 3) To execute feature_extraction-py:
 
@@ -16,7 +18,8 @@ DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 
 ## 4) To execute SVM_classifier.py:
 
-- ???
+- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_train.csv"
+- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 5) To execute main.py
 This main function runs the following steps: feature extraction + training of the classifier + testing of the classifier:
