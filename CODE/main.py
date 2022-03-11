@@ -5,12 +5,11 @@ from SVM_classifier import main as main2
 
 #######################################################################################################################################
 if len(sys.argv) > 1:
-    training_file = sys.argv[1] #this one should be "../DATA/UP_English-EWT/duplicated_train.csv"
+    training_file = sys.argv[1] 
     test_file = sys.argv[2]
 else:
     training_file = "../DATA/UP_English-EWT/duplicated_trainpiccolo.csv"
     test_file = "../DATA/UP_English-EWT/duplicated_trainpiccolo.csv"
-     #this one should be "../DATA/UP_English-EWT/duplicated_test.csv"
 print(test_file)
 print(training_file)
 print()
