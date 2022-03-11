@@ -95,7 +95,7 @@ For the machine learning classification, the features were extracted in a new fi
 
 ### 5. Summary Table for all the Results Generated 
 
-*Three evaluations: Predicate and argument identification and argument classification*
+For a better overview of the results please see the pdf file provided: [**RESULTS**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT/RESULTS.pdf)
 
 
 ### 6. Conclusion
