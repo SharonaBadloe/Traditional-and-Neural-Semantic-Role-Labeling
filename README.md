@@ -61,7 +61,7 @@ The following table provides an overview of all the features selected to carry o
 |                           |                         | Lenght of lists (ancestors and children)  |
 
 
-### 3.1 Baseline Features 
+### 3.1 Basic Features 
 
 - **Token/lemma:** Token is "the word or the punction mark as it appears in the sentence" (Abu-Jbara and Radev, 2012, p.331) while lemma is the root of the token. Token and Lemma in terms of a classification task can be beneficial as the text is divided into pieces thus it can make the process of analyzing and training a classifier easier. 
 - **PoS tag:** It is used to connect a token in text data to its grammatical definition. In a semantic role labelling task it can be useful since some arguments are more likley to correspond to a specific PoS category (e.g. the agent, ARG0, is likely to be a noun).
