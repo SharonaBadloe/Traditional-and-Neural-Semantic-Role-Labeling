@@ -26,13 +26,15 @@ This script takes as input the files that result from feature_extraction-py, in 
 - python SVM_classifier.py "../DATA/OUTPUT/feature_extraction_frame_test.csv"
 
 ## 5) To execute main.py
-This main function runs the following steps: feature extraction + training of the classifier + testing of the classifier:
-
-To run this file you need a (duplicated) csv file, the script will extract features and train the classifier. It will output the results of the confusion matrix.
+This main function runs the following steps: feature extraction + training of the classifier + testing of the classifier. To run this file you need a (duplicated) csv file, the script will extract features and train the classifier. It will output the results of the confusion matrix.
 
 Parameters:
 - path to inputfile (trainingfile)
 - path to testfile
+
+### example:
+- python main.py "../DATA/UP_English-EWT/duplicated_train.csv"
+- python main.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 6) To execute conll_to_json.py
 To run this file you need a conll file that is structured in the same way that was provided in the srl_assignment_code.
