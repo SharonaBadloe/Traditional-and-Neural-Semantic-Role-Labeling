@@ -20,11 +20,12 @@ This data was preprocessed and duplicated before being used as an input for Part
 
 ### Code 
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following scripts:
-* `main.py` This file carries out the entire experiment (feature extraction,
-training, testing)
-* `conll_to_json.py` This file converts the provided conll files into the json format requested to run Part 2.
-* `duplicate_conll.py` This file preprocesses the provided files to duplicate the sentences (See Section 2).  
-* `readme_for_execution.md` This readme includes the information to run the main functions in the terminal 
+* `README.md` This readme includes the information to run the main functions in the terminal
+* `duplicate_conll.py` This script preprocesses the provided files to duplicate the sentences (See Section 2) 
+* `rule-based.py` This script runs the predicate and argument identification with a rule-based approach
+* other scripts used in `main.py`, like `feature_extraction-py` and  `SVM_classifier.py`
+* `main.py` This script carries out the entire experiment (feature extraction, training, testing)
+* `conll_to_json.py` This script converts the provided conll files into the json format requested to run Part 2
 
 ### Results
 The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT) consists of the output files of the following components:
