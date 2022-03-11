@@ -32,7 +32,7 @@ The folder [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/mai
 * `Output of the identification for predicates and arguments`
 * `Output of the Feature Extraction process on the training, dev and test sets`
 * `Output of the Predictions of the classifier on the test data`
-* `Basic Evaluation (scores and matrices)`
+* `RESULTS.pdf` (scores and matrices)
 
 ### Part 1: Traditional SRL
 
