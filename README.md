@@ -23,7 +23,7 @@ The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/
 * `README.md` This readme includes the information to run the main functions in the terminal
 * `duplicate_conll.py` This script preprocesses the provided files to duplicate the sentences (See Section 2) 
 * `rule-based.py` This script runs the predicate and argument identification with a rule-based approach
-* other scripts used in `main.py`, like `feature_extraction-py` and  `SVM_classifier.py`
+* other scripts used in `main.py`, like `feature_extraction.py` and  `SVM_classifier.py`
 * `main.py` This script carries out the entire experiment (feature extraction, training, testing)
 * `conll_to_json.py` This script converts the provided conll files into the json format requested to run Part 2
 
