@@ -6,17 +6,12 @@ This README contains the infromation to run a classifier that performs Semantic 
 * `Part 1: Traditional SRL`
 * `Part 2: Neural SRL`
 
-### Provided Data
-Development Data:
-* `en_ewt-up-dev.conllu`
+### Data
+* `en_ewt-up-dev.conllu` Original development data
+* `en_ewt-up-train.conllu` Original training data
+* `en_ewt-up-test.conllu` Original test data
 
-Training Data:
-* `en_ewt-up-train.conllu`
-
-Test Data:
-* `en_ewt-up-test.conllu`
-
-This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2).
+This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2). **Make sure to unzip the training data (both original and duplicated) before running the scripts!**
 
 ### Code 
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following scripts:
