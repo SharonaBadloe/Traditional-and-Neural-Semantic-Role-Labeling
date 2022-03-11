@@ -34,8 +34,8 @@ Parameters:
 - path to testfile
 
 ### example:
-- python main.py "../DATA/UP_English-EWT/duplicated_train.csv"
-- python main.py "../DATA/UP_English-EWT/duplicated_test.csv"
+- python main.py "../DATA/UP_English-EWT/en_ewt-up-train.duplicated.conll"
+- python main.py "../DATA/UP_English-EWT/en_ewt-up-test.duplicated.conll"
 
 ## 6) To execute conll_to_json.py
 To run this file you need a conll file that is structured in the same way that was provided in the srl_assignment_code.
