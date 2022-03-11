@@ -11,7 +11,7 @@ This README contains the infromation to run a classifier that performs Semantic 
 * `en_ewt-up-train.conllu` Original training data
 * `en_ewt-up-test.conllu` Original test data
 
-This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2). **Make sure to unzip the training data (both original and duplicated) before running the scripts!** The original and the duplicated data can be found in [**UP_English-EWT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/UP_English-EWT). In addition, the output of each step of the task can be found in [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT)
+This data was preprocessed and duplicated before being used as an input for Part 1 (see Section 2). **Make sure to unzip the training data (both original and duplicated) before running the scripts!** The original and the duplicated data can be found in [**UP_English-EWT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/UP_English-EWT). In addition, the output of each step of the task can be found in [**OUTPUT**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/DATA/OUTPUT).
 
 ### Code 
 The folder [**CODE**](https://github.com/gioguitar99/NLP_Assignment_2/tree/main/CODE) consists of the following scripts:
