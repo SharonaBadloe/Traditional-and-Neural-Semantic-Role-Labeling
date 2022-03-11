@@ -3,8 +3,8 @@
 The project was carried out by Giorgio Malinverni, Sharona Badloe, Sybren Moolhuizen and Konstantina Andronikou during the "NLP Technology" course taught by Antske Fokkens and Pia Sommerauer.
 
 This README contains the infromation to run a classifier that performs Semantic Role Labeling (SRL). This work is divided into two parts:
-* `Part 1: Traditional SRL` (in this readme)
-* `Part 2: Neural SRL` (uploaded on Canvas)
+* `Part 1: Traditional SRL` here
+* `Part 2: Neural SRL` uploaded on Canvas
 
 ### Data
 * `en_ewt-up-dev.conllu` Original development data
