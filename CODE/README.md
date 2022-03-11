@@ -1,24 +1,28 @@
 DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 
 ## 1) To execute duplicate_conll.py:
+This script takes as input the original conll file and outputs a duplicated version of the conll, in which the sentences are duplicated according to their number of predicates, and each duplication contains the arguments of a different predicate.
 
 - python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
 - python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-dev.conllu"
 - python duplicate_conll.py "../DATA/UP_English-EWT/en_ewt-up-test.conllu"
 
 ## 2) To execute rule-based.py:
+This script takes as input a duplicated file (we chose to execute it on the testset) and identifies predicates and arguments with a rule-based approach.
 
 - python rule-based.py "../DATA/UP_English-EWT/duplicated_test.conllu"
 
 ## 3) To execute feature_extraction-py:
+This script takes as input the duplicated files and outputs new files with the decided features extracted. 
 
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_train.csv"
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_dev.csv"
 - python feature_extraction.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 4) To execute SVM_classifier.py:
+This script takes as input the files that result from feature_extraction-py, in order to 1) train a SVM classifier on the new trainingset with the features extracted; 2) test that classifier on the new testset with the features extracted. 
 
-- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_train.csv"
+- python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_train.csv" ???????FEATURES EXTRACTED
 - python SVM_classifier.py "../DATA/UP_English-EWT/duplicated_test.csv"
 
 ## 5) To execute main.py
