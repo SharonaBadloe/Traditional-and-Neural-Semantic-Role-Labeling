@@ -1,4 +1,4 @@
-Be sure to execute the terminal from the correct folder (CODE)
+DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 
 ## 1) To execute duplicate_conll.py:
 
