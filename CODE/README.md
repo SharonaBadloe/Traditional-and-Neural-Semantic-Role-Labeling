@@ -6,7 +6,7 @@ DISCLAIMER: Be sure to execute the terminal from the correct folder (CODE) !
 
 ## 2) To execute rule-based.py:
 
-- python rule-based.py "../DATA/UP_English-EWT/en_ewt-up-train.conllu"
+- python rule-based.py "../DATA/UP_English-EWT/en_ewt-up-test.conllu"
 
 ## 3) To execute feature_extraction-py:
 
